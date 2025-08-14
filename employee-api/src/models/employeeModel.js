@@ -7,7 +7,7 @@ export const getAllEmployeesService = async() => {
 
 export const getEmployeeByIdService = async(id) => {
     console.log("Getting employee by id",id)
-    const result = await pool.query("SELECT * from employees where id=$1")
+    const result = await pool.query("SELECT * from employees where id=$1",[id])
     return result.rows[0];
 };
 
